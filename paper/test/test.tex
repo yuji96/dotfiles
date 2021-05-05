@@ -1,0 +1,85 @@
+% \begin{preamble}
+\documentclass[a4paper,12pt,titlepage,autodetect-engine,dvipdfmx-if-dvi,ja=standard]{bxjsarticle}
+
+% \begin{usepackage}
+  \usepackage{amsmath}
+  \usepackage{amssymb}
+  \usepackage{ascmac}
+  \usepackage{enumerate,bm,color}
+  \usepackage{listings,jvlisting}
+  \usepackage{url}
+% \end{usepackage}
+
+% \begin{code block setting}
+  \lstset{
+    basicstyle={\ttfamily},
+    identifierstyle={\small},
+    commentstyle={\smallitshape},
+    keywordstyle={\small\bfseries},
+    ndkeywordstyle={\small},
+    stringstyle={\small\ttfamily},
+    frame={tb},
+    breaklines=true,
+    columns=[l]{fullflexible},
+    numbers=left,
+    xrightmargin=0zw,
+    xleftmargin=3zw,
+    numberstyle={\scriptsize},
+    stepnumber=1,
+    numbersep=1zw,
+    lineskip=-0.5ex
+  }
+% \end{code block setting}
+
+% \begin{newcommand}
+  \newcommand{\mytitle}{題名}
+  \newcommand{\mysubject}{科目名}
+  \newcommand{\myday}{提出日}
+  \newcommand{\mynumber}{学籍番号}
+  \newcommand{\myname}{名前}
+  \newcommand{\myschool}{大学}
+  \newcommand{\myinstitute}{所属}
+  
+  \newcommand{\diag}[1]{\mathrm{diag}(#1)}
+  \newcommand{\red}[1]{\textcolor{red}{#1}}
+  \makeatletter
+  \newcommand{\figcaption}[1]{\def\@captype{figure}\caption{#1}}
+  \newcommand{\tblcaption}[1]{\def\@captype{table}\caption{#1}}
+  \makeatother
+  % \end{newcommand}
+
+% \end{preamble}
+
+\begin{document}
+
+\begin{titlepage}
+  \centering
+  {\Large \myday}
+  \vspace{10truept}
+
+  {\Large \mysubject}
+  \vspace*{180truept}
+
+  {\Huge \mytitle}
+  \vspace{200truept}
+
+  {\Large \myschool}
+  \vspace{10truept}
+
+  {\Large \myinstitute}
+  \vspace{30truept}
+
+  {\Large \mynumber ~ \myname}
+\end{titlepage}
+
+% 目次
+
+\section{セクション}
+
+
+
+% \begin{thebibliography}{9}
+%   \bibitem{1} 
+% \end{thebibliography}
+
+\end{document}
