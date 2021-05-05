@@ -8,6 +8,7 @@
   \usepackage{ascmac}
   \usepackage{enumerate,bm,color}
   \usepackage{listings,jvlisting}
+  \usepackage{url}
 % \end{usepackage}
 
 % \begin{page setting}
@@ -44,6 +45,13 @@
 \newcommand{\myday}{\today} 
 \newcommand{\mynumber}{${3:$学籍番号}}
 \newcommand{\myname}{${4:$名前}}
+
+\newcommand{\diag}[1]{\mathrm{diag}(#1)}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\makeatletter
+\newcommand{\figcaption}[1]{\def\@captype{figure}\caption{#1}}
+\newcommand{\tblcaption}[1]{\def\@captype{table}\caption{#1}}
+\makeatother
 % \end{newcommand}
 
 % \end{preamble}
@@ -51,7 +59,7 @@
 \begin{document}
 % \begin{header}
   \noindent {\Large\textbf\mytitle}
-  {\hfill\small\mysubject\\\hfill\small\myday\\}
+  {\hfill\small\mysubject \newline \hfill\small\myday \newline}
   
   \hfill \underline{\large 学籍番号 ~ \mynumber ~~ 名前 ~ \myname}
   \bigskip
