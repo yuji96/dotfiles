@@ -1,0 +1,62 @@
+% \begin{preamble}
+\documentclass[autodetect-engine,dvipdfmx-if-dvi,ja=standard,a4paper,12pt]{bxjsarticle}
+\usepackage[size=a4paper]{bxpapersize}
+
+% \begin{usepackage}
+  \usepackage{amsmath}
+  \usepackage{amssymb}
+  \usepackage{ascmac}
+  \usepackage{enumerate,bm,color}
+  \usepackage{listings,jvlisting}
+% \end{usepackage}
+
+% \begin{page setting}
+  \setlength{\topmargin}{-20mm}
+  \setlength{\textheight}{257mm}
+  \setlength{\oddsidemargin}{-7mm}
+  \setlength{\textwidth}{170mm}
+% \end{page setting}
+
+% \begin{code block setting}
+  \lstset{
+    basicstyle={\ttfamily},
+    identifierstyle={\small},
+    commentstyle={\smallitshape},
+    keywordstyle={\small\bfseries},
+    ndkeywordstyle={\small},
+    stringstyle={\small\ttfamily},
+    frame={tb},
+    breaklines=true,
+    columns=[l]{fullflexible},
+    numbers=left,
+    xrightmargin=0zw,
+    xleftmargin=3zw,
+    numberstyle={\scriptsize},
+    stepnumber=1,
+    numbersep=1zw,
+    lineskip=-0.5ex
+  }
+% \end{code block setting}
+
+% \begin{newcommand}
+\newcommand{\mytitle}{${1:$表題}}
+\newcommand{\mysubject}{${2:$科目名}}
+\newcommand{\myday}{\today} 
+\newcommand{\mynumber}{${3:$学籍番号}}
+\newcommand{\myname}{${4:$名前}}
+% \end{newcommand}
+
+% \end{preamble}
+
+\begin{document}
+% \begin{header}
+  \noindent {\Large\textbf\mytitle}
+  {\hfill\small\mysubject\\\hfill\small\myday\\}
+  
+  \hfill \underline{\large 学籍番号 ~ \mynumber ~~ 名前 ~ \myname}
+  \bigskip
+% \end{header}
+
+${0:$本文}
+
+\end{document}

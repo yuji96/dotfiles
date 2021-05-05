@@ -1,0 +1,21 @@
+{
+  // LaTeX
+  "[latex]": {
+    "editor.defaultFormatter": null
+  },
+  "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.latex.autoBuild.run": "never",
+  "latex-workshop.latex.autoClean.run": "never",
+  "latex-workshop.message.warning.show": false,
+  "latex-workshop.message.error.show": false,
+
+  // Run on Save
+  "emeraldwalk.runonsave": {
+    "commands": [
+      {
+        "match": "\\.tex$",
+        "cmd": "cd ${fileDirname} && latexmk -pdf -file-line-error -synctex=1 -interaction=nonstopmode ${fileBasename} && latexmk -c ${fileBasename}"
+      }
+    ]
+  }
+}
