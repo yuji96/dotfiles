@@ -1,0 +1,87 @@
+% \begin{preamble}
+% for pdfLaTeX
+\documentclass[pdflatex,unicode,10pt]{beamer}
+\usepackage[whole,autotilde]{bxcjkjatype}
+
+% \begin{navigation bar setting}
+  \setbeamertemplate{navigation symbols}{} % ナビゲーションバーを非表示
+  \setbeamertemplate{footline}[frame number] % ページ番号表示
+  \setbeamerfont{footline}{size=\footnotesize} % ページ番号のフォントの大きさ
+  \setbeamercolor{footline}{fg=black,bg=black} % フォントの色
+% \end{navigation bar setting}
+
+% \begin{hyper link setting}
+  \usepackage{hyperref} % 目次などのハイパーリンク機能を付ける
+  \usepackage{pxjahyper} % PDF のしおりの文字化け対策
+  \definecolor{darkBlue}{rgb}{0,0,0.3}
+  \hypersetup{
+    colorlinks=true, % カラーリンク使用
+    linkcolor=blue, % 内部参照リンク用のカラー
+    citecolor=red, % 文献参照リンク用のカラー
+    urlcolor=darkBlue, % 外部参照 URL リンク用のカラー
+  }
+% \end{hyper link setting}
+
+% \begin{font setting}
+  \usepackage{graphicx,xcolor} % RGB値やカラーコードなどが使えるようにする
+  \usepackage{minijs} % 和文メトリックの調整（代わりに otf を読み込んでも良い）
+  \usepackage{newtxtext,newtxmath} % 欧文フォントを times 系にする
+  \renewcommand{\familydefault}{\sfdefault} % 英文をサンセリフ体にする
+  \renewcommand{\kanjifamilydefault}{\gtdefault} % 和文をゴシック体にする
+  \usefonttheme{professionalfonts} % 数式はセリフ体にする
+  \setbeamerfont{frametitle}{series=\bf} %フレームの欧文テキストを bold にする
+  \setbeamertemplate{enumerate item}[default] % 箇条書きの番号表示を数字のみにする
+  \setbeamertemplate{section in toc}{\inserttocsectionnumber.~\inserttocsection\par} % 目次の節番号をシンプルにする
+% \end{font setting}
+
+% \begin{caption setting}
+  \setbeamertemplate{caption}[numbered]
+  \renewcommand{\figurename}{図}
+  \renewcommand{\tablename}{表}
+% \end{caption setting}
+
+% \begin{my setting}
+  % \newenvironment<>{orangeBlock}[1]{% 新しい block 環境 タイトルバーがオレンジのブロック
+  % 	\setbeamercolor{block title}{fg=white,bg=orange!75!gray}% ブロックタイトルバーの色
+  % 	\setbeamercolor{block body}{fg=black,bg=gray!10!white}% ブロック本文の色
+  % 	\begin{block}#2{#1}}{\end{block}}
+
+  \usetheme{Frankfurt}
+  % テーマのギャラリーの一例： http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+  % ダウンロードしたテーマの置き場所は /usr/local/texlive/2017/texmf-dist/tex/latex/beamer
+
+  \newcommand{\diag}[1]{\mathrm{diag}(#1)}
+  \newcommand{\red}[1]{\textcolor{red}{#1}}
+  \makeatletter
+  \newcommand{\figcaption}[1]{\def\@captype{figure}\caption{#1}}
+  \newcommand{\tblcaption}[1]{\def\@captype{table}\caption{#1}}
+  \makeatother
+
+  \usepackage{bm}
+  \usepackage{url}
+% \end{my setting}
+
+% \begin{title setting}
+  \title{タイトル}
+  \subtitle{サブタイトル}
+  \author{発表者}
+  \institute{所属}
+  \date{発表日}
+% \end{title setting}
+
+% \end{preamble}
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{目次}
+  \tableofcontents
+\end{frame}
+
+
+
+\end{document}

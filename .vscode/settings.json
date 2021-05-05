@@ -1,7 +1,9 @@
 {
   // LaTeX
   "[latex]": {
-    "editor.defaultFormatter": null
+    "editor.defaultFormatter": null,
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false
   },
   "latex-workshop.view.pdf.viewer": "tab",
   "latex-workshop.latex.autoBuild.run": "never",
@@ -14,7 +16,12 @@
     "commands": [
       {
         "match": "\\.tex$",
-        "cmd": "cd ${fileDirname} && latexmk -pdf -file-line-error -synctex=1 -interaction=nonstopmode ${fileBasename} && latexmk -c ${fileBasename}"
+        "cmd": "cd ${fileDirname} && latexmk -pdf -file-line-error -interaction=nonstopmode -outdir=out ${fileBasename}"
+        // "cmd": "cd ${fileDirname} && latexmk -latex='uplatex' -file-line-error -interaction=nonstopmode -outdir=out ${fileBasename}"
+      },
+      {
+        "match": "\\.tex$",
+        "cmd": "cd ${fileDirname} && mv out/${fileBasenameNoExt}.pdf . ; rm -r out __latexindent_temp.*"
       }
     ]
   }
