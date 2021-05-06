@@ -1,5 +1,5 @@
 % \begin{preamble}
-\documentclass[a4paper,12pt,titlepage,autodetect-engine,dvipdfmx-if-dvi,ja=standard]{bxjsarticle}
+\documentclass[a4paper,12pt,titlepage]{ujarticle}
 
 % \begin{usepackage}
   \usepackage{amsmath}

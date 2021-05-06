@@ -1,6 +1,5 @@
 % \begin{preamble}
-\documentclass[autodetect-engine,dvipdfmx-if-dvi,ja=standard,a4paper,12pt]{bxjsarticle}
-\usepackage[size=a4paper]{bxpapersize}
+\documentclass[a4paper,12pt]{ujarticle}
 
 % \begin{usepackage}
   \usepackage{amsmath}

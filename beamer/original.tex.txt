@@ -1,9 +1,5 @@
 % \begin{preamble}
-% for pdfLaTeX
-${0}\documentclass[pdflatex,unicode,10pt]{beamer}
-\usepackage[whole,autotilde]{bxcjkjatype}
-% for upLaTeX
-\documentclass[upLaTeX,dvipdfmx,10pt]{beamer}
+\documentclass[upLaTeX,dvipdfmx,10pt,a4paper]{beamer}
 
 % \begin{navigation bar setting}
   \setbeamertemplate{navigation symbols}{} % ナビゲーションバーを非表示
