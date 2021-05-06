@@ -1,28 +1,54 @@
 {
   // LaTeX
   "[latex]": {
-    "editor.defaultFormatter": null,
+    "editor.formatOnSave": false,
     "editor.tabSize": 2,
     "editor.detectIndentation": false
   },
   "latex-workshop.view.pdf.viewer": "tab",
-  "latex-workshop.latex.autoBuild.run": "never",
-  "latex-workshop.latex.autoClean.run": "never",
+  "latex-workshop.latex.autoBuild.run": "onFileChange",
+  "latex-workshop.latex.autoClean.run": "onBuilt",
   "latex-workshop.message.warning.show": false,
   "latex-workshop.message.error.show": false,
-
-  // Run on Save
-  "emeraldwalk.runonsave": {
-    "commands": [
-      {
-        "match": "\\.tex$",
-        "cmd": "cd ${fileDirname} && latexmk -pdf -file-line-error -interaction=nonstopmode -outdir=out ${fileBasename}"
-        // "cmd": "cd ${fileDirname} && latexmk -latex='uplatex' -file-line-error -interaction=nonstopmode -outdir=out ${fileBasename}"
-      },
-      {
-        "match": "\\.tex$",
-        "cmd": "cd ${fileDirname} && mv out/${fileBasenameNoExt}.pdf . ; rm -r out __latexindent_temp.*"
-      }
-    ]
-  }
+  "latex-workshop.latex.tools": [
+    {
+      "name": "uplatex",
+      "command": "latexmk",
+      "args": ["-latex='uplatex'", "-file-line-error", "-interaction=nonstopmode"]
+    }
+  ],
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "uplatex",
+      "tools": ["uplatex"]
+    }
+  ],
+  "latex-workshop.latex.clean.fileTypes": [
+    "*.aux",
+    "*.bbl",
+    "*.blg",
+    "*.idx",
+    "*.ind",
+    "*.lof",
+    "*.lot",
+    "*.out",
+    "*.toc",
+    "*.acn",
+    "*.acr",
+    "*.alg",
+    "*.glg",
+    "*.glo",
+    "*.gls",
+    "*.ist",
+    "*.fls",
+    "*.log",
+    "*.fdb_latexmk",
+    "*.synctex.gz",
+    "*.dvi",
+    // for Beamer files
+    "_minted*",
+    "*.nav",
+    "*.snm",
+    "*.vrb"
+  ]
 }

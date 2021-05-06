@@ -1,4 +1,9 @@
 {
+  "line break": {
+    "prefix": "\\\\",
+    "body": ["\\\\\\"],
+    "description": "prefer line break"
+  },
   "comment block": {
     "scope": "latex",
     "prefix": "\\comment",
@@ -16,8 +21,7 @@
     "prefix": "\\report",
     "body": [
       "% \\begin{preamble}",
-      "\\documentclass[autodetect-engine,dvipdfmx-if-dvi,ja=standard,a4paper,12pt]{bxjsarticle}",
-      "\\usepackage[size=a4paper]{bxpapersize}",
+      "\\documentclass[a4paper,12pt]{ujarticle}",
       "",
       "% \\begin{usepackage}",
       "  \\usepackage{amsmath}",
@@ -93,11 +97,7 @@
     "prefix": "\\beamer",
     "body": [
       "% \\begin{preamble}",
-      "% for pdfLaTeX",
-      "${0}\\documentclass[pdflatex,unicode,10pt]{beamer}",
-      "\\usepackage[whole,autotilde]{bxcjkjatype}",
-      "% for upLaTeX",
-      "\\documentclass[upLaTeX,dvipdfmx,10pt]{beamer}",
+      "\\documentclass[upLaTeX,dvipdfmx,10pt,a4paper]{beamer}",
       "",
       "% \\begin{navigation bar setting}",
       "  \\setbeamertemplate{navigation symbols}{} % ナビゲーションバーを非表示",
@@ -189,7 +189,7 @@
     "prefix": "\\paper",
     "body": [
       "% \\begin{preamble}",
-      "\\documentclass[a4paper,12pt,titlepage,autodetect-engine,dvipdfmx-if-dvi,ja=standard]{bxjsarticle}",
+      "\\documentclass[a4paper,12pt,titlepage]{ujarticle}",
       "",
       "% \\begin{usepackage}",
       "  \\usepackage{amsmath}",
