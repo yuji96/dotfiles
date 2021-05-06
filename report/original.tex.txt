@@ -41,7 +41,7 @@
 % \begin{newcommand}
 \newcommand{\mytitle}{${1:表題}}
 \newcommand{\mysubject}{${2:科目名}}
-\newcommand{\myday}{\today} 
+\newcommand{\myday}{\西暦\today} 
 \newcommand{\mynumber}{${3:学籍番号}}
 \newcommand{\myname}{${4:名前}}
 
