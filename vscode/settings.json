@@ -1,0 +1,152 @@
+{
+  // VSCode
+  // #region
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  },
+  "editor.formatOnSave": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.minimap.enabled": false,
+  "editor.suggestSelection": "recentlyUsed",
+  "editor.tabCompletion": "on",
+  "extensions.autoUpdate": true,
+  "extensions.ignoreRecommendations": true,
+  "keyboard.dispatch": "keyCode",
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 800,
+  "files.eol": "\n",
+  "files.exclude": {
+    ".DS_Store": true,
+    "Icon[\r]": true,
+    "**/__pycache__": true,
+    "**/.eggs": true,
+    "**/.ipynb_checkpoints": true,
+    "**/.pytest_cache": true,
+    "**/*.egg-info": true
+  },
+  "window.newWindowDimensions": "maximized",
+  "window.restoreWindows": "none",
+  "editor.tokenColorCustomizations": {
+    "functions": "#d6d12f"
+  },
+  "workbench.startupEditor": "none",
+  // #endregion
+
+  // Python
+  // #region
+  "autoDocstring.docstringFormat": "numpy",
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "notebook.lineNumbers": "on",
+  "jupyter.askForKernelRestart": false,
+  "jupyter.sendSelectionToInteractiveWindow": false,
+  "python.analysis.completeFunctionParens": true,
+  "python.defaultInterpreterPath": "~/.pyenv/versions/3.8.0/bin/python",
+  "python.formatting.yapfArgs": [
+    "--style={column_limit: 84, indent_width: 4, SPLIT_BEFORE_NAMED_ASSIGNS=False}"
+  ],
+  "python.languageServer": "Pylance",
+  "python.linting.flake8Args": ["--max-line-length=84"],
+  "python.linting.flake8CategorySeverity.E": "Warning",
+  "python.linting.flake8CategorySeverity.F": "Warning",
+  "python.linting.flake8Enabled": true,
+  "python.formatting.provider": "yapf",
+  "[python]": {
+    "editor.wordBasedSuggestions": false,
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  // #endregion
+
+  // web develop
+  "prettier.printWidth": 84,
+
+  // LaTeX
+  // #region
+  "[latex]": {
+    "editor.formatOnSave": false,
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false
+  },
+  "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.latex.autoBuild.run": "onFileChange",
+  "latex-workshop.latex.autoClean.run": "onBuilt",
+  "latex-workshop.message.warning.show": false,
+  "latex-workshop.message.error.show": false,
+  "latex-workshop.latex.tools": [
+    {
+      "name": "uplatex",
+      "command": "latexmk",
+      "args": ["-latex='uplatex'", "-file-line-error", "-interaction=nonstopmode"]
+    }
+  ],
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "uplatex",
+      "tools": ["uplatex"]
+    }
+  ],
+  // prettier-ignore
+  "latex-workshop.latex.clean.fileTypes": [
+    "*.aux", "*.bbl", "*.blg", "*.idx", "*.ind",
+    "*.lof", "*.lot", "*.out", "*.toc", "*.acn",
+    "*.acr", "*.alg", "*.glg", "*.glo", "*.gls",
+    "*.ist", "*.fls", "*.log", "*.fdb_latexmk", "*.synctex.gz",
+    "*.dvi", 
+    // for Beamer files
+    "_minted*", "*.nav","*.snm", "*.vrb"
+  ],
+  // #endregion
+
+  // ToDo Tree
+  // #region
+  "todo-tree.general.tags": ["TODO", "HACK", "FIXME"],
+  "todo-tree.highlights.defaultHighlight": {
+    "icon": "checklist",
+    "type": "text",
+    "fontWeight": "bold",
+    "iconColour": "#2C7CFF"
+  },
+  "todo-tree.highlights.customHighlight": {
+    "TODO": {
+      "foreground": "#e9e9e9"
+    },
+    "HACK": {
+      "foreground": "#5c5c5c"
+    },
+    "FIXME": {
+      "foreground": "#cc7b3c"
+    }
+  },
+  // #endregion
+
+  // MarkDown
+  // #region
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": false
+  },
+  "markdown.marp.enableHtml": true,
+  "markdown.marp.exportType": "html",
+  // #endregion
+
+  // JSON
+  // #region
+  "[json]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "markdown.marp.themes": ["./yuji-theme.css", "marp/theme.css"],
+  "window.zoomLevel": 1
+  // #endregion
+}

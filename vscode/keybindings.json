@@ -1,0 +1,258 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+  {
+    "key": "shift+space",
+    "command": "type",
+    "args": {
+      "text": "~"
+    },
+    "when": "editorTextFocus && editorLangId == latex"
+  },
+  {
+    "key": "cmd+c",
+    "command": "-extension.vim_cmd+c",
+    "when": "editorTextFocus && vim.active && vim.overrideCopy && vim.use<D-c> && !inDebugRepl"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "-extension.vim_ctrl+e",
+    "when": "editorTextFocus && vim.active && vim.use<C-e> && !inDebugRepl"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "-cursorEnd",
+    "when": "editorTextFocus && !inRegionMode && vim.mode == 'Insert'"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "-cursorEnd",
+    "when": "editorTextFocus && vim.active && vim.mode == 'Replace'"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "-cursorEndSelect",
+    "when": "editorTextFocus && inRegionMode && vim.mode == 'Insert'"
+  },
+  {
+    "key": "ctrl+a",
+    "command": "-extension.vim_ctrl+a",
+    "when": "editorTextFocus && vim.active && vim.use<C-a> && !inDebugRepl"
+  },
+  {
+    "key": "shift+cmd+,",
+    "command": "editor.emmet.action.wrapIndividualLinesWithAbbreviation"
+  },
+  {
+    "key": "alt+s",
+    "command": "workbench.action.toggleAutoSave"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.duplicateWorkspaceInNewWindow"
+  },
+  {
+    "key": "shift+f12",
+    "command": "workbench.action.navigateBack"
+  },
+  {
+    "key": "ctrl+[Minus]",
+    "command": "-workbench.action.navigateBack"
+  },
+  {
+    "key": "ctrl+cmd+s",
+    "command": "git.stageSelectedRanges",
+    "when": "isInDiffEditor"
+  },
+  {
+    "key": "cmd+k alt+cmd+s",
+    "command": "-git.stageSelectedRanges",
+    "when": "isInDiffEditor"
+  },
+  {
+    "key": "shift+cmd+w",
+    "command": "workbench.action.closeAllEditors"
+  },
+  {
+    "key": "cmd+k cmd+w",
+    "command": "-workbench.action.closeAllEditors"
+  },
+  {
+    "key": "cmd+1",
+    "command": "workbench.view.explorer",
+    "when": "viewContainer.workbench.view.explorer.enabled"
+  },
+  {
+    "key": "shift+cmd+e",
+    "command": "-workbench.view.explorer",
+    "when": "viewContainer.workbench.view.explorer.enabled"
+  },
+  {
+    "key": "cmd+2",
+    "command": "workbench.view.search"
+  },
+  {
+    "key": "shift+cmd+f",
+    "command": "-workbench.view.search",
+    "when": "workbench.view.search.active && neverMatch =~ /doesNotMatch/"
+  },
+  {
+    "key": "cmd+3",
+    "command": "workbench.view.scm",
+    "when": "workbench.scm.active"
+  },
+  {
+    "key": "ctrl+shift+g",
+    "command": "-workbench.view.scm",
+    "when": "workbench.scm.active"
+  },
+  {
+    "key": "cmd+4",
+    "command": "workbench.view.extensions",
+    "when": "viewContainer.workbench.view.extensions.enabled"
+  },
+  {
+    "key": "shift+cmd+x",
+    "command": "-workbench.view.extensions",
+    "when": "viewContainer.workbench.view.extensions.enabled"
+  },
+  {
+    "key": "cmd+5",
+    "command": "todo-tree-view.focus"
+  },
+  {
+    "key": "cmd+2",
+    "command": "-workbench.action.focusSecondEditorGroup"
+  },
+  {
+    "key": "ctrl+cmd+3",
+    "command": "git-graph.view"
+  },
+  {
+    "key": "backspace",
+    "command": "-restructuredtext.editor.listEditing.onBackspaceKey",
+    "when": "editorTextFocus && !editorReadonly && !suggestWidgetVisible && editorLangId == 'restructuredtext' && vim.mode != 'CommandlineInProgress' && vim.mode != 'EasyMotionInputMode' && vim.mode != 'EasyMotionMode' && vim.mode != 'Normal' && vim.mode != 'Replace' && vim.mode != 'SearchInProgressMode' && vim.mode != 'SurroundInputMode' && vim.mode != 'Visual' && vim.mode != 'VisualBlock' && vim.mode != 'VisualLine'"
+  },
+  {
+    "key": "enter",
+    "command": "-resttext.key.enter",
+    "when": "editorTextFocus && resttext.enter.enabled && !suggestWidgetVisible && editorLangId == 'restructuredtext'"
+  },
+  {
+    "key": "ctrl+shift+`",
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  {
+    "key": "ctrl+shift+[BracketLeft]",
+    "command": "-workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+  {
+    "key": "shift+right",
+    "command": "-cursorColumnSelectRight",
+    "when": "editorColumnSelection && textInputFocus"
+  },
+  {
+    "key": "cmd+h",
+    "command": "-testing.toggleTestingPeekHistory",
+    "when": "testing.isPeekVisible"
+  },
+  {
+    "key": "cmd+b",
+    "command": "-markdown.extension.editing.toggleBold",
+    "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'"
+  },
+  {
+    "key": "alt+m",
+    "command": "markdown.extension.editing.toggleMath",
+    "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'"
+  },
+  {
+    "key": "cmd+m",
+    "command": "-markdown.extension.editing.toggleMath",
+    "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'"
+  },
+  {
+    "key": "cmd+]",
+    "command": "-markdown.extension.onIndentLines",
+    "when": "editorTextFocus && !suggestWidgetVisible && editorLangId == 'markdown'"
+  },
+  {
+    "key": "ctrl+shift+`",
+    "command": "-workbench.action.terminal.new",
+    "when": "terminalProcessSupported"
+  },
+  {
+    "key": "shift+cmd+;",
+    "command": "-breadcrumbs.focus",
+    "when": "breadcrumbsPossible"
+  },
+  {
+    "key": "shift+cmd+;",
+    "command": "workbench.action.zoomIn"
+  },
+  {
+    "key": "shift+cmd+=",
+    "command": "-workbench.action.zoomIn"
+  },
+  {
+    "key": "shift+enter",
+    "command": "-python.execSelectionInTerminal",
+    "when": "editorTextFocus && !findInputFocussed && !jupyter.ownsSelection && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
+  },
+  {
+    "key": "backspace",
+    "command": "jupyter.interactive.removeCell",
+    "when": "notebookEditorFocused && !textInputFocus"
+  },
+  {
+    "key": "cmd+l",
+    "command": "workbench.action.gotoLine"
+  },
+  {
+    "key": "ctrl+g",
+    "command": "-workbench.action.gotoLine"
+  },
+  {
+    "key": "shift+cmd+a",
+    "command": "bracketeer.selectBracketContent"
+  },
+  {
+    "key": "shift+alt+cmd+h",
+    "command": "-bracketeer.selectBracketContent"
+  },
+  {
+    "key": "ctrl+cmd+a",
+    "command": "bracketeer.selectQuotesContent"
+  },
+  {
+    "key": "shift+alt+cmd+0",
+    "command": "-bracketeer.selectQuotesContent"
+  },
+  {
+    "key": "ctrl+backspace",
+    "command": "bracketeer.removeBrackets"
+  },
+  {
+    "key": "shift+alt+cmd+i",
+    "command": "-bracketeer.removeBrackets"
+  },
+  {
+    "key": "cmd+r",
+    "command": "workbench.action.reloadWindow"
+  },
+  {
+    "key": "cmd+r",
+    "command": "-workbench.action.reloadWindow",
+    "when": "isDevelopment"
+  },
+  {
+    "key": "cmd+s cmd+s",
+    "command": "notebook.formatCell",
+    "when": "editorHasDocumentFormattingProvider && editorTextFocus && inCompositeEditor && notebookEditable && !editorReadonly && activeEditor == 'workbench.editor.notebook'"
+  },
+  {
+    "key": "shift+alt+f",
+    "command": "-notebook.formatCell",
+    "when": "editorHasDocumentFormattingProvider && editorTextFocus && inCompositeEditor && notebookEditable && !editorReadonly && activeEditor == 'workbench.editor.notebook'"
+  }
+]
