@@ -1,0 +1,46 @@
+/* @theme yuji */
+
+@import 'default';
+
+/* 字下げ */
+p {
+  text-indent: 1em;
+}
+/* 表を常に全体表示させる */
+table {
+  overflow: visible;
+}
+/* 上揃え */
+section {
+  justify-content: flex-start;
+}
+/* ページ番号 */
+section::after {
+  content: attr(data-marpit-pagination) " / " attr(data-marpit-pagination-total);
+  color: black;
+  font-size: 25px;
+}
+
+/* タイトルページ */
+section.title {
+  justify-content: center;
+}
+section.title h3{
+  font-weight: 350;
+  margin: 10px;
+}
+section.title div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 数式を全幅表示 */
+section svg[data-marp-fitting-math] [data-marp-fitting-svg-content] {
+  width: 100%;
+}
+/* ![center]() でセンタりングする */
+img[alt~="center"] {
+  display: block;
+  margin: 0 auto;
+}
