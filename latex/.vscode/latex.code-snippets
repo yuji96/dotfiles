@@ -5,19 +5,16 @@
     "description": "prefer line break"
   },
   "comment block": {
-    "scope": "latex",
     "prefix": "\\comment",
     "body": ["% \\begin{${1:comment}}", "  ${0}", "% \\end{${1:comment}}"],
     "description": "comment block"
   },
   "normal frame": {
-    "scope": "latex",
     "prefix": "\\frame",
     "body": ["\\begin{frame}{${1:title}}", "  ${0}", "\\end{frame}"],
     "description": "comment block"
   },
   "report": {
-    "scope": "latex",
     "prefix": "\\report",
     "body": [
       "% \\begin{preamble}",
@@ -93,7 +90,6 @@
     "description": "report style"
   },
   "beamer": {
-    "scope": "latex",
     "prefix": "\\beamer",
     "body": [
       "% \\begin{preamble}",
@@ -119,6 +115,7 @@
       "% \\end{hyper link setting}",
       "",
       "% \\begin{font setting}",
+      "  \\setlength\\parindent{1em}",
       "  \\usepackage{graphicx,xcolor} % RGB値やカラーコードなどが使えるようにする",
       "  \\usepackage{minijs} % 和文メトリックの調整（代わりに otf を読み込んでも良い）",
       "  \\usepackage{newtxtext,newtxmath} % 欧文フォントを times 系にする",
@@ -185,7 +182,6 @@
     "description": "beamer style"
   },
   "paper": {
-    "scope": "latex",
     "prefix": "\\paper",
     "body": [
       "% \\begin{preamble}",
