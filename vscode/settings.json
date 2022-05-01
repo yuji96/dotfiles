@@ -146,7 +146,6 @@
     "editor.tabSize": 2,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "markdown.marp.themes": ["./yuji-theme.css", "marp/theme.css"],
   "window.zoomLevel": 1
   // #endregion
 }
