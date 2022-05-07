@@ -42,6 +42,8 @@
     "jupyter-notebook": "left"
   },
   "notebook.lineNumbers": "on",
+  "notebook.diff.ignoreOutputs": true,
+  "notebook.diff.ignoreMetadata": true,
   "jupyter.askForKernelRestart": false,
   "jupyter.sendSelectionToInteractiveWindow": false,
   "python.analysis.completeFunctionParens": true,
@@ -63,6 +65,10 @@
 
   // web develop
   "prettier.printWidth": 84,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
 
   // LaTeX
   // #region
