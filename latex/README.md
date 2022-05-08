@@ -15,21 +15,21 @@ VSCode で LaTeX 作業をする上で自分が使っている設定
 
 ### `\report`
 
-![](https://github.com/yuji96/LaTeX-in-VSCode/blob/master/_movies/report.gif)
+![](https://github.com/yuji96/dotfiles/blob/master/latex/_movies/report.gif?raw=true)
 
 ### `\paper`
 
-![](https://github.com/yuji96/LaTeX-in-VSCode/blob/master/_movies/paper.gif)
+![](https://github.com/yuji96/dotfiles/blob/master/latex/_movies/paper.gif?raw=true)
 
 ### `\beamer`
 
-![](https://github.com/yuji96/LaTeX-in-VSCode/blob/master/_movies/beamer.gif)
+![](https://github.com/yuji96/dotfiles/blob/master/latex/_movies/beamer.gif?raw=true)
 
 これは LaTeX エンジンによってドキュメントクラスの変更が必要。
 
 ### `\comment`
 
-![](https://github.com/yuji96/LaTeX-in-VSCode/blob/master/_movies/comment.gif)
+![](https://github.com/yuji96/dotfiles/blob/master/latex/_movies/comment.gif?raw=true)
 
 コメント内でも `\begin, \end` は反応するのを利用した。裏技を発見した気分。
 
@@ -47,7 +47,7 @@ VSCode で LaTeX 作業をする上で自分が使っている設定
 
 `LaTeX` の言語設定ファイルである `~/.vscode/extensions/james-yu.latex-workshop-8.17.0/syntax/syntax.json` の `brackets, autoCloseingPairs, surroundingPairs` に他の括弧の記述を真似して `$` を追加すると以下のような挙動になる。
 
-![](https://github.com/yuji96/LaTeX-in-VSCode/blob/master/_movies/math.gif)
+![](https://github.com/yuji96/dotfiles/blob/master/latex/_movies/math.gif?raw=true)
 
 ### ユーザースニペットの変更
 
