@@ -9,8 +9,11 @@
   "editor.formatOnSave": true,
   "editor.guides.bracketPairs": "active",
   "editor.minimap.enabled": false,
+  "editor.scrollbar.verticalScrollbarSize": 50,
   "editor.suggestSelection": "recentlyUsed",
   "editor.tabCompletion": "on",
+  "explorer.confirmDragAndDrop": false,
+  "explorer.sortOrder": "type",
   "extensions.autoUpdate": true,
   "extensions.ignoreRecommendations": true,
   "keyboard.dispatch": "keyCode",
@@ -33,7 +36,6 @@
   },
   "workbench.startupEditor": "none",
   // #endregion
-
   // Python
   // #region
   "autoDocstring.docstringFormat": "numpy",
@@ -46,13 +48,16 @@
   "notebook.diff.ignoreMetadata": true,
   "jupyter.askForKernelRestart": false,
   "jupyter.sendSelectionToInteractiveWindow": false,
+  "python.analysis.autoImportCompletions": true,
   "python.analysis.completeFunctionParens": true,
-  "python.defaultInterpreterPath": "~/.pyenv/versions/3.8.0/bin/python",
   "python.formatting.yapfArgs": [
     "--style={column_limit: 84, indent_width: 4, SPLIT_BEFORE_NAMED_ASSIGNS=False}"
   ],
   "python.languageServer": "Pylance",
-  "python.linting.flake8Args": ["--max-line-length=84"],
+  "python.linting.flake8Args": [
+    "--max-line-length=84",
+    "--ignore=E741"
+  ],
   "python.linting.flake8CategorySeverity.E": "Warning",
   "python.linting.flake8CategorySeverity.F": "Warning",
   "python.linting.flake8Enabled": true,
@@ -62,14 +67,16 @@
     "editor.defaultFormatter": "ms-python.python"
   },
   // #endregion
-
   // web develop
   "prettier.printWidth": 84,
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 2
   },
-
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
   // LaTeX
   // #region
   "[latex]": {
@@ -78,38 +85,67 @@
     "editor.detectIndentation": false
   },
   "latex-workshop.view.pdf.viewer": "tab",
-  "latex-workshop.latex.autoBuild.run": "onFileChange",
+  "latex-workshop.latex.autoBuild.run": "onSave",
   "latex-workshop.latex.autoClean.run": "onBuilt",
-  "latex-workshop.message.warning.show": false,
-  "latex-workshop.message.error.show": false,
-  "latex-workshop.latex.tools": [
-    {
-      "name": "uplatex",
-      "command": "latexmk",
-      "args": ["-latex='uplatex'", "-file-line-error", "-interaction=nonstopmode"]
-    }
+  "latex-workshop.message.latexlog.exclude": [
+    "Font shape .* undefined.*",
+    "Overfull.+too wide.*"
   ],
   "latex-workshop.latex.recipes": [
     {
-      "name": "uplatex",
-      "tools": ["uplatex"]
-    }
+      "name": "latexmk",
+      "tools": [
+        "latexmk"
+      ]
+    },
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": [
+        "-halt-on-error",
+        "%DOC%.tex"
+      ],
+    },
   ],
   // prettier-ignore
   "latex-workshop.latex.clean.fileTypes": [
-    "*.aux", "*.bbl", "*.blg", "*.idx", "*.ind",
-    "*.lof", "*.lot", "*.out", "*.toc", "*.acn",
-    "*.acr", "*.alg", "*.glg", "*.glo", "*.gls",
-    "*.ist", "*.fls", "*.log", "*.fdb_latexmk", "*.synctex.gz",
-    "*.dvi", 
+    "*.aux",
+    "*.bbl",
+    "*.blg",
+    "*.idx",
+    "*.ind",
+    "*.lof",
+    "*.lot",
+    "*.out",
+    "*.toc",
+    "*.acn",
+    "*.acr",
+    "*.alg",
+    "*.glg",
+    "*.glo",
+    "*.gls",
+    "*.ist",
+    "*.fls",
+    "*.log",
+    "*.fdb_latexmk",
+    "*.synctex.gz",
+    "*.dvi",
     // for Beamer files
-    "_minted*", "*.nav","*.snm", "*.vrb"
+    "_minted*",
+    "*.nav",
+    "*.snm",
+    "*.vrb"
   ],
   // #endregion
-
   // ToDo Tree
   // #region
-  "todo-tree.general.tags": ["TODO", "HACK", "FIXME"],
+  "todo-tree.general.tags": [
+    "TODO",
+    "HACK",
+    "FIXME"
+  ],
   "todo-tree.highlights.defaultHighlight": {
     "icon": "checklist",
     "type": "text",
@@ -128,7 +164,6 @@
     }
   },
   // #endregion
-
   // MarkDown
   // #region
   "[markdown]": {
@@ -136,12 +171,17 @@
     "editor.unicodeHighlight.ambiguousCharacters": false,
     "editor.unicodeHighlight.nonBasicASCII": false,
     "editor.wordWrap": "on",
-    "editor.quickSuggestions": false
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    }
   },
   "markdown.marp.enableHtml": true,
-  "markdown.marp.exportType": "html",
+  "markdown.marp.themes": [
+    "./yuji-theme.css"
+  ],
   // #endregion
-
   // JSON
   // #region
   "[json]": {
@@ -150,8 +190,24 @@
   },
   "[jsonc]": {
     "editor.tabSize": 2,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
-  "window.zoomLevel": 1
+  // #endregion
+  // 
+  // other
+  "[plaintext]": {
+    "editor.language.colorizedBracketPairs": [
+      [
+        "(",
+        ")"
+      ]
+    ]
+  },
+  "files.associations": {
+    "*.gs": "javascript",
+    ".env": "shellscript"
+  },
+  "csv-edit.readOption_hasHeader": "true",
+  "terminal.integrated.enableMultiLinePasteWarning": false,
   // #endregion
 }
