@@ -7,7 +7,7 @@
     "source.organizeImports": true
   },
   "editor.formatOnSave": true,
-  "editor.guides.bracketPairs": "active",
+  "editor.guides.bracketPairs": false,
   "editor.minimap.enabled": false,
   "editor.scrollbar.verticalScrollbarSize": 50,
   "editor.suggestSelection": "recentlyUsed",
@@ -17,7 +17,6 @@
   "extensions.autoUpdate": true,
   "extensions.ignoreRecommendations": true,
   "keyboard.dispatch": "keyCode",
-  "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 800,
   "files.eol": "\n",
   "files.exclude": {
@@ -34,7 +33,16 @@
   "editor.tokenColorCustomizations": {
     "functions": "#d6d12f"
   },
-  "workbench.startupEditor": "none",
+  "workbench.startupEditor": "welcomePageInEmptyWorkbench",
+  "workbench.colorCustomizations": {
+    "editor.selectionBackground": "#c979f7",
+    "editor.selectionHighlightBackground": "#394185",
+    "editor.findMatchHighlightBackground": "#264eff",
+    "editor.findMatchBackground": "#ae00ff",
+    "editor.lineHighlightBackground": "#1073cf2d",
+    "editor.lineHighlightBorder": "#9fced11f"
+  },
+  "git.mergeEditor": false,
   // #endregion
   // Python
   // #region
@@ -44,12 +52,9 @@
     "jupyter-notebook": "left"
   },
   "notebook.lineNumbers": "on",
-  "notebook.diff.ignoreOutputs": true,
   "notebook.diff.ignoreMetadata": true,
   "jupyter.askForKernelRestart": false,
-  "jupyter.sendSelectionToInteractiveWindow": false,
   "python.analysis.autoImportCompletions": true,
-  "python.analysis.completeFunctionParens": true,
   "python.formatting.yapfArgs": [
     "--style={column_limit: 84, indent_width: 4, SPLIT_BEFORE_NAMED_ASSIGNS=False}"
   ],
@@ -61,7 +66,7 @@
   "python.linting.flake8CategorySeverity.E": "Warning",
   "python.linting.flake8CategorySeverity.F": "Warning",
   "python.linting.flake8Enabled": true,
-  "python.formatting.provider": "yapf",
+  "python.formatting.provider": "black",
   "[python]": {
     "editor.wordBasedSuggestions": false,
     "editor.defaultFormatter": "ms-python.python"
@@ -86,11 +91,12 @@
   },
   "latex-workshop.view.pdf.viewer": "tab",
   "latex-workshop.latex.autoBuild.run": "onSave",
-  "latex-workshop.latex.autoClean.run": "onBuilt",
+  // "latex-workshop.latex.autoClean.run": "onBuilt",
   "latex-workshop.message.latexlog.exclude": [
     "Font shape .* undefined.*",
     "Overfull.+too wide.*"
   ],
+  "latex-workshop.latex.autoBuild.cleanAndRetry.enabled": false,
   "latex-workshop.latex.recipes": [
     {
       "name": "latexmk",
@@ -105,39 +111,42 @@
       "command": "latexmk",
       "args": [
         "-halt-on-error",
+        "-outdir=%DOC%/",
         "%DOC%.tex"
       ],
     },
   ],
-  // prettier-ignore
-  "latex-workshop.latex.clean.fileTypes": [
-    "*.aux",
-    "*.bbl",
-    "*.blg",
-    "*.idx",
-    "*.ind",
-    "*.lof",
-    "*.lot",
-    "*.out",
-    "*.toc",
-    "*.acn",
-    "*.acr",
-    "*.alg",
-    "*.glg",
-    "*.glo",
-    "*.gls",
-    "*.ist",
-    "*.fls",
-    "*.log",
-    "*.fdb_latexmk",
-    "*.synctex.gz",
-    "*.dvi",
-    // for Beamer files
-    "_minted*",
-    "*.nav",
-    "*.snm",
-    "*.vrb"
-  ],
+  // これコメントアウトしないとタイプセット遅くなる
+  // "latex-workshop.latex.clean.fileTypes": [
+  //   "*.aux",  // 目次や参考文献等の参照用
+  //   "*.bbl",  // 参考文献の環境ファイル
+  //   "*.blg",
+  //   "*.idx",
+  //   "*.ind",
+  //   "*.lof",
+  //   "*.lot",
+  //   "*.out",
+  //   "*.toc",
+  //   "*.acn",
+  //   "*.acr",
+  //   "*.alg",
+  //   "*.glg",
+  //   "*.glo",
+  //   "*.gls",
+  //   "*.ist",
+  //   "*.fls",
+  //   "*.log",
+  //   "*.fdb_latexmk",
+  //   "*.synctex.gz",
+  //   "*.dvi",
+  //   // for Beamer files
+  //   "_minted*",
+  //   "*.nav",
+  //   "*.snm",
+  //   "*.vrb",
+  //   "*.bcf",
+  //   "*.run.xml"
+  // ],
   // #endregion
   // ToDo Tree
   // #region
@@ -186,15 +195,15 @@
   // #region
   "[json]": {
     "editor.tabSize": 2,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[jsonc]": {
     "editor.tabSize": 2,
     "editor.defaultFormatter": "vscode.json-language-features"
   },
   // #endregion
-  // 
-  // other
+  // temporary settings
+  // #region
   "[plaintext]": {
     "editor.language.colorizedBracketPairs": [
       [
@@ -205,9 +214,22 @@
   },
   "files.associations": {
     "*.gs": "javascript",
-    ".env": "shellscript"
+    ".env": "shellscript",
+    "*.pdf": "code-text-binary"
   },
+  "editor.inlineSuggest.enabled": true,
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "pasteImage.path": "${projectRoot}/img",
   "csv-edit.readOption_hasHeader": "true",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "terminal.integrated.enableMultiLinePasteWarning": false,
-  // #endregion
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "editor.unicodeHighlight.allowedCharacters": {
+    "　": true
+  },
+  "todo-tree.regex.regex": "(%|//|#|<!--|;|/\\*|^|^[ \\t]*(-|\\d+.))\\s*($TAGS)"
 }
