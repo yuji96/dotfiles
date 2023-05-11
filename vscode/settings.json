@@ -55,21 +55,22 @@
   "notebook.diff.ignoreMetadata": true,
   "jupyter.askForKernelRestart": false,
   "python.analysis.autoImportCompletions": true,
-  "python.formatting.yapfArgs": [
-    "--style={column_limit: 84, indent_width: 4, SPLIT_BEFORE_NAMED_ASSIGNS=False}"
-  ],
   "python.languageServer": "Pylance",
   "python.linting.flake8Args": [
-    "--max-line-length=84",
+    "--max-line-length=89",
     "--ignore=E741"
   ],
   "python.linting.flake8CategorySeverity.E": "Warning",
   "python.linting.flake8CategorySeverity.F": "Warning",
   "python.linting.flake8Enabled": true,
   "python.formatting.provider": "black",
+  "python.formatting.blackArgs": [
+    "--line-length=89"
+  ],
   "[python]": {
     "editor.wordBasedSuggestions": false,
-    "editor.defaultFormatter": "ms-python.python"
+    "editor.defaultFormatter": "ms-python.python",
+    "editor.formatOnType": true
   },
   // #endregion
   // web develop
@@ -110,8 +111,9 @@
       "name": "latexmk",
       "command": "latexmk",
       "args": [
+        "-interaction=nonstopmode",
         "-halt-on-error",
-        "-outdir=%DOC%/",
+        "-outdir=output/",
         "%DOC%.tex"
       ],
     },
@@ -231,5 +233,14 @@
   "editor.unicodeHighlight.allowedCharacters": {
     "　": true
   },
-  "todo-tree.regex.regex": "(%|//|#|<!--|;|/\\*|^|^[ \\t]*(-|\\d+.))\\s*($TAGS)"
+  "todo-tree.regex.regex": "(%|//|#|<!--|;|/\\*|^|^[ \\t]*(-|\\d+.))\\s*($TAGS)",
+  "workbench.editorAssociations": {
+    "*.pdf": "pdf.preview"
+  },
+  "python.analysis.completeFunctionParens": true,
+  "flake8.severity": {
+    "E": "Warning",
+    "F": "Warning"
+  },
+  "git.openRepositoryInParentFolders": "always",
 }
