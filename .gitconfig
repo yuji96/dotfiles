@@ -6,25 +6,25 @@
 	required = true
 	clean = git-lfs clean -- %f
 [alias]
-	stm = stash save -m
 	fp = fetch -p
 	br = branch
 	co = checkout
 	ss = status
 	cm = commit -m
 	l = log --graph --all --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
-	ll = log --stat --abbrev-commit
-	lg = log --color --graph --pretty=format:'%C(bold white)%h%Creset -%C(bold green)%d%Creset %s %C(bold green)(%cr)%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --dat
-	llg = log --color --graph --pretty=format:'%C(bold white)%H %d%Creset%n%s%n%+b%C(bold blue)%an <%ae>%Creset %C(bold green)%cr (%ci)' --abbrev-commit
 	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
 	ps = push
 	pl = pull
 	st = stash
 	cp = cherry-pick
+    delete-merged = !git branch --merged | egrep -v '\\*|main|master|develop' | xargs git branch -d
 [pull]
 	rebase = false
 [core]
 	whitespace = cr-at-eol
 	quotepath = false
+	precomposeunicode = true
 [init]
 	defaultBranch = main
+[log]
+	follow = true

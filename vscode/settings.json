@@ -1,7 +1,5 @@
 {
-  // VSCode
-  // #region
-  "diffEditor.ignoreTrimWhitespace": false,
+  // general settngs #region
   "editor.bracketPairColorization.enabled": true,
   "editor.codeActionsOnSave": {
     "source.organizeImports": true
@@ -12,6 +10,14 @@
   "editor.scrollbar.verticalScrollbarSize": 50,
   "editor.suggestSelection": "recentlyUsed",
   "editor.tabCompletion": "on",
+  "editor.tokenColorCustomizations": {
+    "functions": "#d6d12f"
+  },
+  "editor.inlineSuggest.enabled": true,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "editor.unicodeHighlight.allowedCharacters": {
+    "　": true
+  },
   "explorer.confirmDragAndDrop": false,
   "explorer.sortOrder": "type",
   "extensions.autoUpdate": true,
@@ -28,11 +34,14 @@
     "**/.pytest_cache": true,
     "**/*.egg-info": true
   },
+  "files.associations": {
+    "*.gs": "javascript",
+    ".env": "shellscript",
+  },
+  "git.mergeEditor": false,
+  "terminal.integrated.enableMultiLinePasteWarning": false,
   "window.newWindowDimensions": "maximized",
   "window.restoreWindows": "none",
-  "editor.tokenColorCustomizations": {
-    "functions": "#d6d12f"
-  },
   "workbench.startupEditor": "welcomePageInEmptyWorkbench",
   "workbench.colorCustomizations": {
     "editor.selectionBackground": "#c979f7",
@@ -42,38 +51,47 @@
     "editor.lineHighlightBackground": "#1073cf2d",
     "editor.lineHighlightBorder": "#9fced11f"
   },
-  "git.mergeEditor": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.editor.enablePreview": false,
+  "workbench.editorAssociations": {
+    "*.pdf": "pdf.preview"
+  },
+  "[plaintext]": {
+    "editor.language.colorizedBracketPairs": [
+      [
+        "(",
+        ")"
+      ]
+    ]
+  },
   // #endregion
-  // Python
-  // #region
+  // Python #region
   "autoDocstring.docstringFormat": "numpy",
+  "flake8.severity": {
+    "E": "Warning",
+    "F": "Warning"
+  },
+  "flake8.args": [
+    "--ignore=E203"
+  ],
   "notebook.cellToolbarLocation": {
     "default": "right",
     "jupyter-notebook": "left"
   },
   "notebook.lineNumbers": "on",
   "notebook.diff.ignoreMetadata": true,
+  "notebook.stickyScroll.enabled": true,
   "jupyter.askForKernelRestart": false,
   "python.analysis.autoImportCompletions": true,
+  "python.analysis.completeFunctionParens": true,
   "python.languageServer": "Pylance",
-  "python.linting.flake8Args": [
-    "--max-line-length=89",
-    "--ignore=E741"
-  ],
-  "python.linting.flake8CategorySeverity.E": "Warning",
-  "python.linting.flake8CategorySeverity.F": "Warning",
-  "python.linting.flake8Enabled": true,
-  "python.formatting.provider": "black",
-  "python.formatting.blackArgs": [
-    "--line-length=89"
-  ],
   "[python]": {
     "editor.wordBasedSuggestions": false,
-    "editor.defaultFormatter": "ms-python.python",
+    "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnType": true
   },
   // #endregion
-  // web develop
+  // web develop #region
   "prettier.printWidth": 84,
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -83,19 +101,27 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 2
   },
-  // LaTeX
-  // #region
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // #endregion
+  // LaTeX #region
   "[latex]": {
     "editor.formatOnSave": false,
     "editor.tabSize": 2,
     "editor.detectIndentation": false
   },
   "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.message.badbox.show": false,
   "latex-workshop.latex.autoBuild.run": "onSave",
   // "latex-workshop.latex.autoClean.run": "onBuilt",
   "latex-workshop.message.latexlog.exclude": [
     "Font shape .* undefined.*",
-    "Overfull.+too wide.*"
+    // "Overfull.+too wide.*"
+    "^Underfull .hbox (badness .*)"
   ],
   "latex-workshop.latex.autoBuild.cleanAndRetry.enabled": false,
   "latex-workshop.latex.recipes": [
@@ -150,8 +176,7 @@
   //   "*.run.xml"
   // ],
   // #endregion
-  // ToDo Tree
-  // #region
+  // ToDo Tree #region
   "todo-tree.general.tags": [
     "TODO",
     "HACK",
@@ -174,9 +199,9 @@
       "foreground": "#cc7b3c"
     }
   },
+  "todo-tree.regex.regex": "(%|//|#|<!--|;|/\\*|^|^[ \\t]*(-|\\d+.))\\s*($TAGS)",
   // #endregion
-  // MarkDown
-  // #region
+  // MarkDown #region
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.unicodeHighlight.ambiguousCharacters": false,
@@ -190,11 +215,10 @@
   },
   "markdown.marp.enableHtml": true,
   "markdown.marp.themes": [
-    "./yuji-theme.css"
+    "yuji-theme.css"
   ],
   // #endregion
-  // JSON
-  // #region
+  // JSON #region
   "[json]": {
     "editor.tabSize": 2,
     "editor.defaultFormatter": "vscode.json-language-features"
@@ -204,43 +228,14 @@
     "editor.defaultFormatter": "vscode.json-language-features"
   },
   // #endregion
-  // temporary settings
-  // #region
-  "[plaintext]": {
-    "editor.language.colorizedBracketPairs": [
-      [
-        "(",
-        ")"
-      ]
-    ]
-  },
-  "files.associations": {
-    "*.gs": "javascript",
-    ".env": "shellscript",
-    "*.pdf": "code-text-binary"
-  },
-  "editor.inlineSuggest.enabled": true,
-  "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "pasteImage.path": "${projectRoot}/img",
+  // Text #region
+  // #endregion
+  // other #region
   "csv-edit.readOption_hasHeader": "true",
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "terminal.integrated.enableMultiLinePasteWarning": false,
-  "editor.unicodeHighlight.ambiguousCharacters": false,
-  "editor.unicodeHighlight.allowedCharacters": {
-    "　": true
-  },
-  "todo-tree.regex.regex": "(%|//|#|<!--|;|/\\*|^|^[ \\t]*(-|\\d+.))\\s*($TAGS)",
-  "workbench.editorAssociations": {
-    "*.pdf": "pdf.preview"
-  },
-  "python.analysis.completeFunctionParens": true,
-  "flake8.severity": {
-    "E": "Warning",
-    "F": "Warning"
-  },
-  "git.openRepositoryInParentFolders": "always",
+  "git.ignoreMissingGitWarning": true,
+  "svg.preview.mode": "svg",
+  // #endregion
+  // temporary settings
+  "files.autoSave": "afterDelay",
+  "git.openRepositoryInParentFolders": "always"
 }
