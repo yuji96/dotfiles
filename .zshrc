@@ -9,6 +9,7 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export PATH="/opt/homebrew/bin:$PATH"
 
 source "/opt/homebrew/opt/zinit/zinit.zsh"
+source ~/.local/share/zsh/plugins/zsh-shift-select/zsh-shift-select.plugin.zsh
 
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
