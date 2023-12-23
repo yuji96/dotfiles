@@ -1,13 +1,13 @@
 {
-  "title": "L-ctrl + vim-like arrow keys",
+  "title": "L-ctrl + imjk arrow keys",
   "rules": [
     {
-      "description": "L-ctrl + vim-like arrow keys",
+      "description": "L-ctrl + imjk arrow keys",
       "manipulators": [
         {
           "type": "basic",
           "from": {
-            "key_code": "h",
+            "key_code": "j",
             "modifiers": {
               "mandatory": [
                 "left_control"
@@ -38,14 +38,14 @@
           },
           "to": [
             {
-              "key_code": "up_arrow"
+              "key_code": "right_arrow"
             }
           ]
         },
         {
           "type": "basic",
           "from": {
-            "key_code": "l",
+            "key_code": "i",
             "modifiers": {
               "mandatory": [
                 "left_control"
@@ -57,14 +57,14 @@
           },
           "to": [
             {
-              "key_code": "right_arrow"
+              "key_code": "up_arrow"
             }
           ]
         },
         {
           "type": "basic",
           "from": {
-            "key_code": "j",
+            "key_code": "m",
             "modifiers": {
               "mandatory": [
                 "left_control"
