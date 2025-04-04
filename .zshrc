@@ -41,7 +41,6 @@ alias py='python'
 alias ipy='ipython'
 alias venv='python -m venv venv && . venv/bin/activate && pip install -U pip flake8 black isort'
 alias brave='open -a Brave\ Browser'
-alias numbers='open -a Numbers'
 
 # for python
 ## pyenv
@@ -50,9 +49,25 @@ export PATH="$PYENV_ROOT/shims:$PATH"
 eval "$(pyenv init -)"
 export PIPENV_VERBOSITY=-1
 export TBVACCINE=1
+export PATH="$HOME/.local/bin:$PATH"
 
 # direnv
 eval "$(direnv hook zsh)"
 
+# for ruby
+[[ -d ~/.rbenv  ]] && \
+  export PATH=${HOME}/.rbenv/bin:${PATH} && \
+  eval "$(rbenv init -)"
+
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# # pnpm
+# export PNPM_HOME="$HOME/Library/pnpm"
+# case ":$PATH:" in
+#   *":$PNPM_HOME:"*) ;;
+#   *) export PATH="$PNPM_HOME:$PATH" ;;
+# esac
+# # pnpm end
+

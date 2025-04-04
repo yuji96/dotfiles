@@ -1,8 +1,8 @@
 {
-  "title": "L-ctrl + imjk arrow keys",
+  "title": "arrow keys with L-ctrl",
   "rules": [
     {
-      "description": "L-ctrl + imjk arrow keys",
+      "description": "arrow keys with L-ctrl",
       "manipulators": [
         {
           "type": "basic",
@@ -45,7 +45,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "i",
+            "key_code": "p",
             "modifiers": {
               "mandatory": [
                 "left_control"
@@ -64,7 +64,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "m",
+            "key_code": "period",
             "modifiers": {
               "mandatory": [
                 "left_control"
