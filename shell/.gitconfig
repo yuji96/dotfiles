@@ -1,3 +1,6 @@
+[user]
+	name = yuji96
+	email = y.yama683@gmail.com
 [color]
 	ui = true
 [filter "lfs"]
@@ -28,3 +31,5 @@
 	defaultBranch = main
 [log]
 	follow = true
+[push]
+	autoSetupRemote = true
