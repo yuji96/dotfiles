@@ -369,5 +369,27 @@
     "key": "shift+cmd+[",
     "command": "-workbench.action.terminal.focusPrevious",
     "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+  },
+  {
+    "key": "shift+cmd+-",
+    "command": "workbench.files.action.collapseExplorerFolders"
+  },
+  {
+    "key": "ctrl+shift+cmd+w",
+    "command": "workbench.action.closeOtherEditors"
+  },
+  {
+    "key": "alt+cmd+t",
+    "command": "-workbench.action.closeOtherEditors"
+  },
+  {
+    "key": "shift+cmd+o",
+    "command": "editor.action.selectHighlights",
+    "when": "editorFocus"
+  },
+  {
+    "key": "shift+cmd+l",
+    "command": "-editor.action.selectHighlights",
+    "when": "editorFocus"
   }
 ]
