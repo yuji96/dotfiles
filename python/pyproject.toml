@@ -10,14 +10,22 @@ dependencies = [
     "transformers>=4.51.3",
 ]
 
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cu124", marker = "sys_platform == 'linux'" },
+    { index = "pytorch-cpu", marker = "sys_platform == 'darwin'" },
+]
+plt = { git = "https://github.com/yuji96/plt.git" }
+
 [[tool.uv.index]]
 name = "pytorch-cu124"
 url = "https://download.pytorch.org/whl/cu124"
 explicit = true
 
-[tool.uv.sources]
-torch = { index = "pytorch-cu124" }
-plt = { git = "https://github.com/yuji96/plt.git" }
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
 
 [dependency-groups]
 dev = [
